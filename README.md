@@ -1,4 +1,4 @@
-MicrofilmJS is used to display a horizontal list of summary slides and expanding the selected slide into a detail view using transition animations. Slides can be navigated and interacted with using the mouse, keyboard or touch. It also supports a table-of-contents navigation, navigation using location hashes, filtering slides based on tagged classes and plays nice with mobile devices.
+MicrofilmJS is a jQuery plugin used to display a horizontal list of summary slides and expanding the selected slide into a detail view using transition animations. Slides can be navigated and interacted with using the mouse, keyboard or touch. It also supports a table-of-contents navigation, navigation using location hashes, filtering slides based on tagged classes and plays nice with mobile devices.
 
 ## Requires
 - jQuery
