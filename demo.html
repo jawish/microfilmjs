@@ -83,6 +83,46 @@
 		.page.loading {
 		    background: #fff url('loading.gif') center center no-repeat;
 		}
+		#nav .next, #nav .previous {
+		    position: fixed;
+		    top: 0;
+		    height: 100%;
+		    width: 70px;
+		    z-index: 1;
+		    text-align: center;
+		}
+
+		#nav .next {
+
+		    right: 0;
+		    z-index: 1;
+		}
+		#nav .previous {
+		    left: 0;
+		    z-index: 1;
+		}
+
+		#nav .next a {
+		     right:20px;
+		}
+
+		#nav .next, #nav .previous {
+		     opacity: 0.1
+		}
+
+		#nav .next:hover, #nav .previous:hover {
+		     opacity: 0.6
+		}
+
+
+		#nav .previous a, #nav .next a {
+		    position: absolute;
+		    top: 50%;
+		}
+
+		#nav .next.mobile, #nav .previous.mobile {
+		    background: none;
+		}
 			
 	</style>
 </head>
@@ -159,6 +199,10 @@
 		                <div class="full"></div>
 			</article>
 		</div>
+		<div id="nav">
+                    <div class="next"><a href="#/next" style="top: 347px;"><img src="previous.png"></a></div>
+                    <div class="previous"><a href="#/previous" style="top: 347px;"><img src="next.png"></a></div>
+                </div>
 	</div>
 	</div>
 	
