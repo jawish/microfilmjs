@@ -6,13 +6,11 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
         <script type="text/javascript" src="http://brandonaaron.github.io/jquery-mousewheel/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="./microfilm.js"></script>
+	<link href="microfilm.css" rel="stylesheet" type="text/css" media="all">
 	<style>
 		.container {
-			width: 750px;
+			width: 900px;
 			margin: 0 auto;
-		}
-		#filters ul {
-			margin: 10px;
 		}
 		#filters ul li {
 			display: inline-block;
@@ -34,102 +32,14 @@
 		.center {
 			text-align: center;
 		}
-		.close {
-		    display: none;
-		}
-		.page.large .close {
-			display: block;
-			position: absolute;
-			top: 5px;
-			right: 5px;
-			background: red;
-			font-family: arial, sans-serif;
-			color: white;
-			padding: 5px;
-			cursor: pointer;
-		}
 		#pages {
 		    display: block;
 		    margin-top:20px;
 		}
-
-		#pages .container {
-		    width: 99999px;
-		    position: relative;
-		}
-		.page {
-		    width: 300px;
-		    min-height: 400px;
-		    background: #fff;
-		    margin: 5px;
-		    display: block;
-		    float: left;
-		    font-family: arial;
-		    font-size: 14px;
-		    line-height: 20px;
-		    vertical-align: top;
-		    position: relative;
-		    border:1px solid #d9d9d9;
-		    padding: 10px;
-		}
-		.page .full {
-		    display: none;
-		    overflow: hidden;
-		    height:900px;
-		    padding-bottom:40px;
-		}
-		.page .full iframe {
-		    width: 100%;
-		    border: none;
-		    overflow: hidden;
-		}
-		.page.loading {
-		    background: #fff url('loading.gif') center center no-repeat;
-		}
-		#nav .next, #nav .previous {
-		    position: fixed;
-		    top: 0;
-		    height: 100%;
-		    width: 70px;
-		    z-index: 1;
-		    text-align: center;
-		}
-
-		#nav .next {
-
-		    right: 0;
-		    z-index: 1;
-		}
-		#nav .previous {
-		    left: 0;
-		    z-index: 1;
-		}
-
-		#nav .next a {
-		     right:20px;
-		}
-
-		#nav .next, #nav .previous {
-		     opacity: 0.1
-		}
-
-		#nav .next:hover, #nav .previous:hover {
-		     opacity: 0.6
-		}
-
-
-		#nav .previous a, #nav .next a {
-		    position: absolute;
-		    top: 50%;
-		}
-
-		#nav .next.mobile, #nav .previous.mobile {
-		    background: none;
-		}
 		footer {
-		    margin-top: 25px;
+		    padding-top: 25px;
 		    clear: both;
-		}	
+		}
 	</style>
 </head>
 <body>
@@ -140,74 +50,74 @@
 		<div id="filters">
 			<ul>
 				<li><strong>Filters</strong></li>
-				<li><a href="#" class="filters" data-category="featured">Featured</a></li>
-				<li><a href="#" class="filters" data-category="southasia">South Asia</a></li>
-				<li><a href="#" class="filters" data-category="europe">Europe</a></li>
+				<li><a href="#" class="mf-filters" data-category="featured">Featured</a></li>
+				<li><a href="#" class="mf-filters" data-category="southasia">South Asia</a></li>
+				<li><a href="#" class="mf-filters" data-category="europe">Europe</a></li>
 			</ul>
 		</div>
 		<div id="toc">
 			<ul>
 				<li><strong>Navigation</strong></li>
-				<li class=""><a href="#/1" data-target="1">Maldives</a></li>
-				<li class=""><a href="#/2" data-target="2">India</a></li>
-				<li class=""><a href="#/3" data-target="3">France</a></li>
-				<li class=""><a href="#/4" data-target="4">Sri Lanka</a></li>
-				<li class=""><a href="#/5" data-target="5">Spain</a></li>
+				<li class=""><a class="mf-toc" href="#/1" data-target="1">Maldives</a></li>
+				<li class=""><a class="mf-toc" href="#/2" data-target="2">India</a></li>
+				<li class=""><a class="mf-toc" href="#/3" data-target="3">France</a></li>
+				<li class=""><a class="mf-toc" href="#/4" data-target="4">Sri Lanka</a></li>
+				<li class=""><a class="mf-toc" href="#/5" data-target="5">Spain</a></li>
 			</ul>
 		</div>
 	</div>
 	<div id="bd">
-	<div id="pages">
-		<div class="container">
-			<article class="page southasia exciting featured" data-id="1" data-hash="country-maldives">
-		                <span class="close">x</span>
-		                <div class="preview">
-					<figure><a href="country.html?Maldives" class="permalink"><img src="http://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_Maldives.svg" class="image"></a></figure>
-					<h2><a href="README.md" class="permalink">Maldives</a></h2>
+	<div id="pages" class="container">
+		<div class="mf-container">
+			<article class="mf-page southasia featured" data-id="1" data-hash="country-maldives">
+		                <span class="mf-close">x</span>
+		                <div class="mf-preview">
+					<figure><a href="country.html?Maldives" class="mf-permalink"><img src="http://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_Maldives.svg" class="image"></a></figure>
+					<h2><a href="README.md" class="mf-permalink">Maldives</a></h2>
 					<div>Maldives, officially the Republic of the Maldives and also referred to as the Maldive Islands, is an island nation in the Indian Ocean-Arabian Sea area, consisting of a double chain of twenty-six atolls, oriented north-south, that lie between Minicoy Island (the southernmost part of Lakshadweep, India) and the Chagos Archipelago.</div>
 				</div>
-		                <div class="full"></div>
+		                <div class="mf-full"></div>
 			</article>
-			<article class="page southasia featured" data-id="2" data-hash="country-india">
-		                <span class="close">x</span>
-		                <div class="preview">
-					<figure><a href="country.html?India" class="permalink"><img src="http://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" class="image"></a></figure>
-					<h2><a href="country.html?India" class="permalink">India</a></h2>
+			<article class="mf-page southasia featured" data-id="2" data-hash="country-india">
+		                <span class="mf-close">x</span>
+		                <div class="mf-preview">
+					<figure><a href="country.html?India" class="mf-permalink"><img src="http://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" class="image"></a></figure>
+					<h2><a href="country.html?India" class="mf-permalink">India</a></h2>
 					<div>India, officially the Republic of India, is a country in South Asia. It is the seventh-largest country by area, the second-most populous country with over 1.2 billion people, and the most populous democracy in the world.</div>
 				</div>
-		                <div class="full"></div>
+		                <div class="mf-full"></div>
 			</article>
-			<article class="page europe featured" data-id="3" data-hash="country-france">
-		                <span class="close">x</span>
-		                <div class="preview">
-					<figure><a href="country.html?France" class="permalink"><img src="http://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" class="image"></a></figure>
-					<h2><a href="country.html?France" class="permalink">France</a></h2>
+			<article class="mf-page europe featured" data-id="3" data-hash="country-france">
+		                <span class="mf-close">x</span>
+		                <div class="mf-preview">
+					<figure><a href="country.html?France" class="mf-permalink"><img src="http://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" class="image"></a></figure>
+					<h2><a href="country.html?France" class="mf-permalink">France</a></h2>
 					<div>France, officially the French Republic, is a sovereign country in Western Europe that includes overseas regions and territories. Metropolitan France extends from the Mediterranean Sea to the English Channel and the North Sea, and from the Rhine to the Atlantic Ocean.</div>
 				</div>
-		                <div class="full"></div>
+		                <div class="mf-full"></div>
 			</article>
-			<article class="page southasia featured" data-id="4" data-hash="country-srilanka">
-		                <span class="close">x</span>
-		                <div class="preview">
-					<figure><a href="country.html?Sri_Lanka" class="permalink"><img src="http://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Sri_Lanka.svg" class="image"></a></figure>
-					<h2><a href="country.html?Sri_Lanka" class="permalink">Sri Lanka</a></h2>
+			<article class="mf-page southasia featured" data-id="4" data-hash="country-srilanka">
+		                <span class="mf-close">x</span>
+		                <div class="mf-preview">
+					<figure><a href="country.html?Sri_Lanka" class="mf-permalink"><img src="http://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Sri_Lanka.svg" class="image"></a></figure>
+					<h2><a href="country.html?Sri_Lanka" class="mf-permalink">Sri Lanka</a></h2>
 					<div>Sri Lanka officially the Democratic Socialist Republic of Sri Lanka, is an island country in the northern Indian Ocean off the southern coast of the Indian subcontinent in South Asia; known until 1972 as Ceylon, Sri Lanka has maritime borders with India to the northwest and the Maldives to the southwest.</div>
 				</div>
-		                <div class="full"></div>
+		                <div class="mf-full"></div>
 			</article>
-			<article class="page europe featured" data-id="5" data-hash="country-spain">
-		                <span class="close">x</span>
-		                <div class="preview">
-					<figure><a href="country.html?Spain" class="permalink"><img src="http://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg" class="image"></a></figure>
-					<h2><a href="country.html?Spain" class="permalink">Spain</a></h2>
+			<article class="mf-page europe featured" data-id="5" data-hash="country-spain">
+		                <span class="mf-close">x</span>
+		                <div class="mf-preview">
+					<figure><a href="country.html?Spain" class="mf-permalink"><img src="http://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg" class="image"></a></figure>
+					<h2><a href="country.html?Spain" class="mf-permalink">Spain</a></h2>
 					<div>Spain, officially the Kingdom of Spain, is a sovereign state and a member state of the European Union. It is located on the Iberian Peninsula in southwestern Europe. Spain's 1,214 km (754 mi) border with Portugal is the longest uninterrupted border within the European Union.</div>
 				</div>
-		                <div class="full"></div>
+		                <div class="mf-full"></div>
 			</article>
 		</div>
 		<div id="nav">
-                    <div class="next"><a href="#/next" style="top: 347px;"><img src="previous.png"></a></div>
-                    <div class="previous"><a href="#/previous" style="top: 347px;"><img src="next.png"></a></div>
+                    <div class="mf-next"><a href="#/next" style="top: 347px;"><img src="previous.png"></a></div>
+                    <div class="mf-previous"><a href="#/previous" style="top: 347px;"><img src="next.png"></a></div>
                 </div>
 	</div>
 	</div>
@@ -220,7 +130,6 @@
 	<script type="text/javascript">
             $(document).ready(function() {
                 $("#pages").microfilm({
-                	pageWidthLarge: 990,
                 	initialFilter: 'featured'
                 });
                 $("#pages").microfilm('filter', 'featured');
