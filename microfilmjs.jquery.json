@@ -1,0 +1,23 @@
+{
+    "name": "microfilm",
+    "version": "1.5.0",
+    "title": "MicrofilmJS - Browsable, filterable slides",
+    "author": {
+        "name": "Jawish Hameed",
+        "email": "jawish@gmail.com",
+        "url": "http://jawish.org/"
+    },
+    "licenses": [{
+        "type": "MIT",
+        "url": "https://raw.github.com/jawish/microfilmjs/master/LICENSE.txt"
+    }],
+    "dependencies": {
+        "jquery": ">=1.5",
+        "mousewheel": ">=2.0.0"
+    },
+    "description": "MicrofilmJS is a jQuery plugin used to display a horizontal list of summary slides and expanding the selected slide into a detail view using transition animations. Slides can be navigated and interacted with using the mouse, keyboard or touch",
+    "keywords": ["carousel", "slides", "presentation", "navigation", "timeline"],
+    "homepage": "https://github.com/jawish/microfilmjs",
+    "docs": "https://github.com/jawish/microfilmjs",
+    "demo": "http://jawish.github.io/microfilmjs/demo.html"
+}
